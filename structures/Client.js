@@ -10,8 +10,14 @@ const client = class extends Client {
         this.loadCommands();
         this.loadEvents();
         this.DatabaseConnect();
+        this.systems();
     }
 
+    systems() {
+        ['../systems/antCrash'].forEach(a => {
+            require(`${a}`);
+        });
+    }
     loadCommands(path = './src/commands') {
         const folders = fs.readdirSync(path);
 

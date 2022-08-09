@@ -9,9 +9,12 @@ const client = new Client({
         GatewayIntentBits.GuildMessages,
         GatewayIntentBits.GuildInvites,
         GatewayIntentBits.GuildVoiceStates,
+        GatewayIntentBits.GuildMembers,
+        GatewayIntentBits.MessageContent
     ],
 
 });
+
 
 client.login(process.env.BOT_TOKEN)
 
