@@ -3,7 +3,10 @@ module.exports = class ping extends Command {
     constructor(client, options) {
         super(client, {
             name: 'ping',
-            description: 'visualize o ping do bot',
+            description: '[🪵 Utils] visualize o ping do bot',
         })
+    }
+    run = (interaction) => {
+        interaction.reply({ content: `${interaction.user.toString()}\n🏓 | ${this.client.ws.ping}\n📡 | ${interaction.createdTimestamp - Date.now()}`, ephemeral: true})
     }
 }

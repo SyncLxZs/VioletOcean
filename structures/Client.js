@@ -1,11 +1,15 @@
 const { Client } = require('discord.js');
 const fs = require('fs');
+const Models = require('../database/Models');
+const { connect } = require('mongoose');
+
 const client = class extends Client {
     constructor(options){
         super(options);
         this.commands = [];
         this.loadCommands();
         this.loadEvents();
+        this.DatabaseConnect();
     }
 
     loadCommands(path = './src/commands') {
@@ -31,6 +35,13 @@ const client = class extends Client {
         }
     }
 
-}
+    async DatabaseConnect() {
+        const connection = await connect(process.env.MONGOOSE, {
+            useNewUrlParser: true,
+        });
+        console.log('✔️  Database Conectada');
+        this.db = { connection, ...Models };
+    }
 
+}
 module.exports = client;
