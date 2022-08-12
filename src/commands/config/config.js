@@ -16,6 +16,9 @@ module.exports = class config extends Command {
         })
     }
     run = async(interaction) => {
+        let db = await this.client.db.guild.findOne({ _id: interaction.guild.id });
+        let messages = require(`../../../langs/${db.config.language ? db.config.language : 'enus'}`);
+        if(interaction.member.permissions.has('MANAGE_GUILD')) return interaction.reply({ content: `${interaction.user.toString()} | ${messages.MissingPermissions} MANAGE_GUILD`, ephemeral: true});
         const command = interaction.options.getSubcommand();
         if(command === 'language') {
             require('../../subcommands/language')(this.client, interaction);

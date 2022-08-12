@@ -8,8 +8,11 @@ module.exports = class ready extends Event {
     }
 
     run = () => {
-        console.log('💜 Violet Ocean Online')
-        this.client.guilds.cache.get('1005982700315869236').commands.set(this.client.commands);
+        console.log('💜 Violet Ocean Online');
+        try {
+            this.client.guilds.cache.get('1005982700315869236').commands.set(this.client.commands);
+        } catch {};
+        
     }
 }
 

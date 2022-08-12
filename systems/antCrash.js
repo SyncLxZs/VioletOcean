@@ -1,4 +1,4 @@
-module.exports = () => {
+module.exports = client => {
         process.on('unhandledRejection', (reason, p ) => {
             console.log('⛔ Um erro aconteceu logs enviadas para o Discord!');
             console.log(reason, p);
@@ -15,7 +15,7 @@ module.exports = () => {
      });
 
         process.on('multipleResolves', (type, promise, reason) => {
-          console.log('⛔ Um erro aconteceu logs enviadas para o Discord!');
-          console.log(type, promise, reason);
+          //console.log('⛔ Um erro aconteceu logs enviadas para o Discord!');
+          //console.log(type, promise, reason);
      });
 }

@@ -15,6 +15,10 @@ const client = new Client({
 
 });
 
+['./systems/antCrash'].forEach(a => {
+    require(`${a}`)(client) 
 
-client.login(process.env.BOT_TOKEN)
+});
+
+client.login(process.env.BOT_TOKEN);
 
