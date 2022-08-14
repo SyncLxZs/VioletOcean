@@ -7,6 +7,7 @@ const client = class extends Client {
     constructor(options){
         super(options);
         this.commands = [];
+        this.dataCommand = [];
         this.loadCommands();
         this.loadEvents();
         this.DatabaseConnect();
@@ -22,6 +23,7 @@ const client = class extends Client {
                 const commandClass = require(`../src/commands/${category}/${cmd}`);
                 const command = new (commandClass)(this);
                 this.commands.push(command);
+                this.dataCommand.push(commandClass.data);
             }
         }
     }

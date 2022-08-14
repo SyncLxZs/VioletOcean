@@ -1,3 +1,5 @@
 {
-        "MissingPermissions": "📌 Missing Permissions, you don't have:"
+        "MissingPermissions": "📌 Missing Permissions, you don't have:",
+        "help-title": "📑 Help Menu",
+        "help-description": "🪵 | Hi welcome to my Help Menu, below you see one selection menu"
 }
