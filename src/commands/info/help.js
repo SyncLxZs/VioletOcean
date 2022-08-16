@@ -1,6 +1,27 @@
 const Command = require('../../../structures/Command');
 const Embed = require('../../../structures/Embed');
 const config = require('../../../config.json');
+const { ActionRowBuilder, ButtonBuilder, SelectMenuBuilder } = require('discord.js');
+
+const select = new ActionRowBuilder()
+    .addComponents(
+        new SelectMenuBuilder()
+            .setCustomId('select')
+            .setPlaceholder('Nothin Selected')
+            .addOptions(
+                {
+                    label: '[🪵] Utils',
+                    description: 'Util Commands',
+                    value: 'utils'
+                },
+                {
+                    label: '[⚒️] Config',
+                    description: 'Config Commands',
+                    value: 'config'
+                }
+            )
+    )
+
 
 module.exports = class help extends Command {
     constructor(client, options) {
@@ -33,6 +54,8 @@ module.exports = class help extends Command {
             } else if (lang === 'spanish') {
                 desc = commandData.spanish;
             }
+
+            
             
             const embed = new Embed({
                 title: `📒 ${commandData.name}`,
@@ -59,7 +82,7 @@ module.exports = class help extends Command {
             description: `${language['help-description']}`
         });
         embed.setColor(config.color1);
-        interaction.reply({ content: interaction.user.toString(), embeds: [embed]})
+        await interaction.reply({ content: interaction.user.toString(), embeds: [embed], components: [select]});
     }
 }
 
