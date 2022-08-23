@@ -1,5 +1,10 @@
 {
     "MissingPermissions": "📌 No tienes los permisos necesarios:",
     "help-title": "📑 Menú de ayuda",
-    "help-description": "🪵 | Hola, bienvenido a mi menú de ayuda, a continuación verá un menú de selección"
+    "help-description": "🪵 | Hola, bienvenido a mi menú de ayuda, a continuación verá un menú de selección",
+    "registerError": "📌 Ya has registrado tu USUARIO",
+    "registerSucess": "✅ Registro completado",
+    "name": "Nombre",
+    "star": "Estrellas",
+    "bank": "Banco"
 }

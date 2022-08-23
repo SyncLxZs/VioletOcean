@@ -1,4 +1,4 @@
 module.exports = {
-    memberRPG: require('./member'),
+    member: require('./member'),
     guild: require('./guild')
 }

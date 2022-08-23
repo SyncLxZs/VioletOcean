@@ -1,5 +1,10 @@
 {
     "MissingPermissions": "📌 Você não possui as permissões necessárias: ",
     "help-title": "📑 Menu de Ajuda",
-    "help-description": "🪵 | Oi Bem-Vindo(a) ao meu menu de ajuda, abaixo verá um menu de seleção"
+    "help-description": "🪵 | Oi Bem-Vindo(a) ao meu menu de ajuda, abaixo verá um menu de seleção",
+    "registerError": "📌 Você já cadastrou seu USUÁRIO",
+    "registerSucess": "✅ Registro Completo",
+    "name": "Nome",
+    "star": "Estrela",
+    "bank": "Banco"
 }

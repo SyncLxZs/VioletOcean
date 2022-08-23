@@ -19,8 +19,18 @@ const select = new ActionRowBuilder()
                     description: 'Config Commands',
                     value: 'config'
                 }
-            )
+            ),
+           
     )
+
+    const divButtons = new ActionRowBuilder()
+                .addComponents(
+                    new ButtonBuilder()
+                    .setStyle('5')
+                    .setLabel('Support Server')
+                    .setEmoji('🔗')
+                    .setURL('https://discord.gg/DdnQD8d29V')
+                )
 
 
 module.exports = class help extends Command {
@@ -72,7 +82,7 @@ module.exports = class help extends Command {
                 ]
             });
             embed.setColor(config.color1);
-            interaction.reply({ content: interaction.user.toString(), embeds: [embed]});
+            interaction.reply({ content: interaction.user.toString(), embeds: [embed], components: [divButtons]});
             return;
         }
 
@@ -82,7 +92,7 @@ module.exports = class help extends Command {
             description: `${language['help-description']}`
         });
         embed.setColor(config.color1);
-        await interaction.reply({ content: interaction.user.toString(), embeds: [embed], components: [select]});
+        await interaction.reply({ content: interaction.user.toString(), embeds: [embed], components: [select, divButtons]});
     }
 }
 

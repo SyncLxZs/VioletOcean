@@ -1,5 +1,10 @@
 {
         "MissingPermissions": "📌 Missing Permissions, you don't have:",
         "help-title": "📑 Help Menu",
-        "help-description": "🪵 | Hi welcome to my Help Menu, below you see one selection menu"
+        "help-description": "🪵 | Hi welcome to my Help Menu, below you see one selection menu",
+        "registerError": "📌 Your already registered your USER",
+        "registerSucess": "✅ Registration Completed",
+        "name": "Name",
+        "star": "Stars",
+        "bank": "Bank"
 }
